@@ -91,3 +91,22 @@ class Fine(models.Model):
     reason = models.TextField()
     date_issued = models.DateField(default=timezone.now)
     status = models.CharField(max_length=10, choices=[('Paid', 'Paid'), ('Pending', 'Pending')])
+
+class Cycle(models.Model):
+    start_date = models.DateField()
+    end_date = models.DateField()
+    active = models.BooleanField(default=True, help_text="Is the cycle currently active?")
+
+    def __str__(self):
+        return f"Cycle starting {self.start_date} and ending {self.end_date}"
+
+
+class Guarantor(models.Model):
+    id_number = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    loan = models.ForeignKey('Loan', on_delete=models.CASCADE, related_name='guarantors')
+    relationship_with_loanee = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.name} ({self.relationship_with_loanee}) for Loan ID {self.loan.id}"
