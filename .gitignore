@@ -1,0 +1,9 @@
+/.venv
+.venv
+
+/frontend
+
+/silc/__pycache__
+/silc/migrations/__pycache__
+
+/silc_project/__pycache__

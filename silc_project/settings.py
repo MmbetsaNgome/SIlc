@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',    
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -87,11 +88,11 @@ WSGI_APPLICATION = 'silc_project.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SILC',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'silc',
+        'USER': 'dev',
+        'PASSWORD': 'D3v3lop3r!!!',
         'HOST':'127.0.0.1',
-        'PORT':'3406',
+        'PORT':'3306',
     }
 }
 
@@ -136,3 +137,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]

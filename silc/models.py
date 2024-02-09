@@ -42,6 +42,7 @@ class Member(models.Model):
     class Meta:
         verbose_name = 'Member'
         verbose_name_plural = 'Members'
+
 class Role(models.Model):
     name = models.CharField(max_length=100)
     permissions = models.TextField(help_text='Custom permissions or rights, as a JSON string or similar')
@@ -56,7 +57,7 @@ class GroupRole(models.Model):
 
     def __str__(self):
         return f"{self.user.username} as {self.role.name} in {self.group.name}"
-
+    
 
 class Saving(models.Model):
     member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='savings')
