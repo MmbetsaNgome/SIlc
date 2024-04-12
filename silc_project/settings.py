@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'silc_project.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'silc',
-        'USER': 'dev',
-        'PASSWORD': 'D3v3lop3r!!!',
+        'NAME': 'SILC',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST':'127.0.0.1',
-        'PORT':'3306',
+        'PORT':'3406',
     }
 }
 

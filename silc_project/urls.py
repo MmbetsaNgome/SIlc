@@ -32,10 +32,13 @@ router.register(r'fine', views.FineViewSet)
 router.register(r'cycle', views.CycleViewSet)
 router.register(r'guarantor', views.GuarantorViewSet)
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # path('api/silc/', include('silc.urls')),
+    # path('api/', include(router.urls)),
 ]
 
 urlpatterns += router.urls
